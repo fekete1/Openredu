@@ -160,8 +160,8 @@ class User < ActiveRecord::Base
   validates_format_of :mobile,
                       with: /^\+\d{2}\s\(\d{2}\)\s\d{4,5}-\d{3,4}$/,
                       allow_blank: true
-  validates_format_of :first_name, with: /^\S(\S|\s)*\S$/
-  validates_format_of :last_name, with: /^\S(\S|\s)*\S$/
+  validates_format_of :first_name, with: /^[a-zA-Z0-9\-\_]{1}([a-zA-Z0-9\-\_ ]*)[a-zA-Z0-9\-\_]{1}$/
+  validates_format_of :last_name, with: /^[a-zA-Z0-9\-\_]{1}([a-zA-Z0-9\-\_ ]*)[a-zA-Z0-9\-\_]{1}$/
   validates_length_of :first_name, maximum: 25
   validates_length_of :last_name, maximum: 25
   validates :password,
